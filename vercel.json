@@ -3,6 +3,7 @@
     "silent": true
   },
   "functions": {
-    "api/**/*.dart": { "runtime": "vercel-dart@1.1.0" }
+    "api/**/*.dart": { "runtime": "vercel-dart@1.1.0" },
+    "*.dart": { "runtime": "vercel-dart@1.1.0" }
   }
 }
