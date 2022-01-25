@@ -1,3 +1,4 @@
+import 'dart:convert';
 import 'dart:io' show Platform;
 import 'package:shelf/shelf.dart';
 
@@ -14,7 +15,8 @@ class Router {
         final version = Platform.version.split(" ").first;
         return Response.ok('Hello, from Dart v$version!');
       case "/json":
-        return Response.ok(<String, dynamic>{"key": "value", "test": 3}, headers: {"content-type": "application/json"});
+        return Response.ok(json.encode(<String, dynamic>{"key": "value", "test": 3}),
+            headers: {"content-type": "application/json"});
       case "/html":
         return Response.ok("<html><body><h1>Hello, from Dart!</h1></body></html>",
             headers: {"content-type": "text/html"});
