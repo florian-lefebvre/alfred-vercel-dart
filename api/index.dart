@@ -2,7 +2,7 @@ import 'dart:io';
 
 import 'package:alfred/alfred.dart';
 
-Future handler() async {
+Future handler(req) async {
   final app = Alfred();
 
   app.get('/text', (req, res) => 'Text response');
